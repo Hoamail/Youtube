@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — CreatorFlow Studio</title>
+  <meta name="description" content="Privacy Policy for CreatorFlow Studio, detailing the use of YouTube Data API v3, Google OAuth 2.0, and compliance with Google API Services User Data Policy.">
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-hover: #1f2937;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(239, 68, 68, 0.3);
+      --text: #f9fafb;
+      --text-muted: #94a3b8;
+      --primary: #ef4444;
+      --primary-hover: #dc2626;
+      --badge-bg: rgba(239, 68, 68, 0.12);
+      --badge-text: #fca5a5;
+      --highlight-bg: rgba(59, 130, 246, 0.08);
+      --highlight-border: rgba(59, 130, 246, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .brand-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .back-btn:hover {
+      text-decoration: none;
+      background: var(--surface-hover);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    /* Policy Content */
+    .policy-wrapper {
+      padding: 50px 0 80px;
+    }
+
+    .policy-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 30px;
+    }
+
+    .policy-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .policy-meta {
+      display: flex;
+      gap: 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .policy-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Policy Sections */
+    .policy-section {
+      margin-bottom: 36px;
+    }
+
+    .policy-section h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-num {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .policy-section p {
+      color: #cbd5e1;
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+    }
+
+    .policy-section ul {
+      margin-left: 24px;
+      margin-bottom: 16px;
+      color: #cbd5e1;
+    }
+
+    .policy-section li {
+      margin-bottom: 8px;
+      font-size: 0.96rem;
+    }
+
+    /* Highlight Box for Limited Use & Compliance */
+    .callout-box {
+      background: var(--highlight-bg);
+      border: 1px solid var(--highlight-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .callout-box h3 {
+      font-size: 1.1rem;
+      color: #93c5fd;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout-box p {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .key-point-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+    }
+
+    .key-point-card h4 {
+      font-size: 1rem;
+      color: #f8fafc;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .key-point-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .status-badge {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      margin-top: auto;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: rgba(9, 13, 22, 0.95);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+        </div>
+        <span>CreatorFlow Studio</span>
+        <span class="brand-badge">Internal Tool</span>
+      </a>
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="policy-wrapper">
+    <div class="container">
+      <div class="policy-header">
+        <h1>Privacy Policy</h1>
+        <div class="policy-meta">
+          <span><strong>Application:</strong> CreatorFlow Studio</span>
+          <span><strong>Effective Date:</strong> November 14, 2026</span>
+          <span><strong>Scope:</strong> Internal Creator Tool</span>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <section class="policy-section">
+        <h2><span class="section-num">1.</span> Introduction & Purpose</h2>
+        <p>
+          This Privacy Policy outlines how <strong>CreatorFlow Studio</strong> ("we", "our", or "the Application") interacts with user data and Google APIs. CreatorFlow Studio is an internal productivity tool created solely to assist authenticated content creators in automating video rendering and scheduling video uploads directly to their own YouTube channels via the <strong>YouTube Data API v3</strong>.
+        </p>
+        <p>
+          We take personal privacy and data security seriously. CreatorFlow Studio does not operate as a public commercial service, does not host external user accounts, and is designed with a strict principle of minimal data access and zero third-party data collection.
+        </p>
+      </section>
+
+      <!-- Key Guarantees -->
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4><span class="status-badge"></span> Authorized Channel Only</h4>
+          <p>Actions are performed exclusively on the specific YouTube channel owned and authorized by you.</p>
+        </div>
+        <div class="key-point-card">
+          <h4><span class="status-badge"></span> No Data Selling / Sharing</h4>
+          <p>We do not collect, monetize, sell, lease, or share personal data with any third party.</p>
+        </div>
+        <div class="key-point-card">
+          <h4><span class="status-badge"></span> Local Token Storage</h4>
+          <p>OAuth tokens are kept strictly in local secure storage, never routed to external servers.</p>
+        </div>
+      </div>
+
+      <!-- Information Accessed -->
+      <section class="policy-section">
+        <h2><span class="section-num">2.</span> Google API Access & How We Use Data</h2>
+        <p>
+          CreatorFlow Studio uses Google OAuth 2.0 to request explicit permission to interact with your YouTube account. Specifically, our application requests access to the following Google API scope:
+        </p>
+        <ul>
+          <li>
+            <code>https://www.googleapis.com/auth/youtube.upload</code>: Used exclusively to upload your locally rendered video files, assign metadata (title, description, tags, category, custom thumbnail), and set the scheduled publication time on your channel.
+          </li>
+        </ul>
+        <p>
+          <strong>Specific and Limited Purpose:</strong> Data received via the YouTube Data API is processed strictly to execute actions requested directly by you within the app's workflow. The application only uploads videos that you have selected, rendered, and approved for upload to your own channel.
+        </p>
+      </section>
+
+      <!-- Data We Do Not Collect -->
+      <section class="policy-section">
+        <h2><span class="section-num">3.</span> Information We Do Not Collect, Store, or Share</h2>
+        <p>
+          To maintain absolute privacy, CreatorFlow Studio implements the following strict data practices:
+        </p>
+        <ul>
+          <li><strong>No Third-Party Data Collection:</strong> We do not collect, read, or track data belonging to any third-party viewers, subscribers, commenters, or other YouTube users.</li>
+          <li><strong>No Remote Data Harvesting:</strong> We do not operate remote databases or analytical trackers that capture your identity, browsing habits, or device telemetry.</li>
+          <li><strong>No Data Transfer or Resale:</strong> We never sell, transfer, disclose, or distribute Google user data or personal identifiers to any third-party advertisers, data brokers, or external entities.</li>
+          <li><strong>No AI Model Training on Private Data:</strong> We do not use your private channel data or video content to train generalized artificial intelligence or machine learning models.</li>
+        </ul>
+      </section>
+
+      <!-- Token Storage & Security -->
+      <section class="policy-section">
+        <h2><span class="section-num">4.</span> Token Storage & Security Measures</h2>
+        <p>
+          Upon granting authorization via Google OAuth 2.0, an access token and a refresh token are generated:
+        </p>
+        <ul>
+          <li>OAuth tokens are stored locally on your machine in encrypted or restricted-access configuration storage.</li>
+          <li>Tokens are utilized strictly by your local instance of CreatorFlow Studio to authenticate direct, encrypted HTTPS requests to official Google API endpoints.</li>
+          <li>Tokens are never transmitted to any third-party servers, intermediate proxies, or external destinations.</li>
+        </ul>
+      </section>
+
+      <!-- Google API Services User Data Policy Compliance -->
+      <section class="policy-section">
+        <h2><span class="section-num">5.</span> Google API Services User Data Policy Compliance</h2>
+        <div class="callout-box">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            Limited Use Disclosure
+          </h3>
+          <p>
+            CreatorFlow Studio's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Revocation & Deletion -->
+      <section class="policy-section">
+        <h2><span class="section-num">6.</span> Revoking Access & Data Deletion</h2>
+        <p>
+          You remain in full control of your YouTube and Google account at all times. You can immediately revoke CreatorFlow Studio's access through Google's account security dashboard:
+        </p>
+        <ul>
+          <li>Visit your Google Account Permissions page: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/permissions</a></li>
+          <li>Locate <strong>CreatorFlow Studio</strong> in the list of third-party apps with account access.</li>
+          <li>Click <strong>"Remove Access"</strong>.</li>
+        </ul>
+        <p>
+          To delete all local authentication credentials from your environment, simply delete the local credentials/token file within your CreatorFlow Studio installation folder. Because we do not maintain remote databases containing your data, this action completely purges all association with the application.
+        </p>
+      </section>
+
+      <!-- Changes to Policy -->
+      <section class="policy-section">
+        <h2><span class="section-num">7.</span> Changes to This Policy</h2>
+        <p>
+          If any changes are made to the scope of YouTube Data API integration or application features, this document will be updated accordingly with a revised "Effective Date".
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section class="policy-section">
+        <h2><span class="section-num">8.</span> Contact Information</h2>
+        <p>
+          If you have any questions or require support regarding CreatorFlow Studio or this Privacy Policy, please contact our internal development and operations team at:
+        </p>
+        <p>
+          <strong>Internal Operations & Security Team</strong><br>
+          Email: <a href="mailto:privacy-ops@creatorflow.internal">privacy-ops@creatorflow.internal</a><br>
+          Application: CreatorFlow Studio
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a>
+      </div>
+      <p>&copy; 2026 CreatorFlow Studio. Internal Content Automation Tool.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
